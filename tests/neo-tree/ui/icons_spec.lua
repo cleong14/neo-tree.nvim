@@ -73,15 +73,15 @@ describe("ui/icons", function()
 
       u.assert_buf_lines(bufnr, {
         string.format("  %s", fs_tree.abspath):sub(1, 42),
-        "   ﰊ baz",
-        "    foo",
-        "   │  bar",
-        "   └ * foo1.lua",
-        "   * 1.md",
+        "   󰜌 baz",
+        "    foo ",
+        "   │  bar ",
+        "   └ * foo1.lua ",
+        "   * 1.md ",
       })
 
       u.assert_highlight(bufnr, ns_id, 1, " ", "NeoTreeDirectoryIcon")
-      u.assert_highlight(bufnr, ns_id, 2, "ﰊ ", "NeoTreeDirectoryIcon")
+      u.assert_highlight(bufnr, ns_id, 2, "󰜌 ", "NeoTreeDirectoryIcon")
       u.assert_highlight(bufnr, ns_id, 4, " ", "NeoTreeDirectoryIcon")
       u.assert_highlight(bufnr, ns_id, 5, "* ", "NeoTreeFileIcon")
     end)
@@ -112,15 +112,15 @@ describe("ui/icons", function()
 
       u.assert_buf_lines(bufnr, {
         vim.fn.strcharpart(string.format("  %s", fs_tree.abspath), 0, 40),
-        "   ﰊ baz",
-        "    foo",
-        "   │  bar",
-        "   └  foo1.lua",
-        "    1.md",
+        "   󰜌 baz",
+        "    foo ",
+        "   │  bar ",
+        "   └  foo1.lua ",
+        "    1.md ",
       })
 
       u.assert_highlight(bufnr, ns_id, 1, " ", "NeoTreeDirectoryIcon")
-      u.assert_highlight(bufnr, ns_id, 2, "ﰊ ", "NeoTreeDirectoryIcon")
+      u.assert_highlight(bufnr, ns_id, 2, "󰜌 ", "NeoTreeDirectoryIcon")
       u.assert_highlight(bufnr, ns_id, 4, " ", "NeoTreeDirectoryIcon")
 
       local extmarks = u.get_text_extmarks(bufnr, ns_id, 5, " ")
